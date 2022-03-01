@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <title>BMW</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="./imagenesjs/bmw-logo.png" alt="Logo-Bmw" class="logo" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <button id="btn-registro" type="button" class="btn btn-dark fw-bold fst-italic" data-bs-toggle="modal"
+              data-bs-target="#exampleModal2">
+              Iniciar sección
+            </button>
+            <button id="btn-inicio" type="button" class="btn btn-dark fw-bold fst-italic" data-bs-toggle="modal"
+              data-bs-target="#exampleModal1">
+              Registro
+            </button>
+            <label hidden class="nav-link fw-light text-white btn-dark fw-bold fst-italic" style="color: white"
+              id="name-lastName"></label>
+            <button id="btn-ayuda" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal4"
+              class="btn btn-dark fw-bold fst-italic">
+              Ayuda
+            </button>
+            <button hidden id="btn-cerrar" type="button" class="btn btn-danger fw-bold fst-italic"
+              onclick="cerrarSesion()">
+              Cerrar sesion
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="./imagenesjs/BMW_White_Logo.svg" alt="logoBMW" />
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div>
+                <label for="message-text" class="col-form-label fst-italic">Correo Electrónico:</label>
+                <input type="email" class="form-control" placeholder="Ingresa tu email" id="correoInicio" />
+              </div>
+              <div>
+                <label for="message-text" class="col-form-label fst-italic">Contraseña:</label>
+                <input type="password" class="form-control" placeholder="Ingresa tu contraseña" id="contraInicio" />
+              </div>
+              <div id="incorrecto"></div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <p class="registrateAqui">
+              No tenes una cuenta?<button type="button" class="bg-white btn-link fw-bold fst-italic" id="btnRegistro"
+                data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                Registrate Aquí!
+              </button>
+            </p>
+            <button  type="submit" class="btn btn-primary" id="iniciar">
+              Iniciar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" id="modal123">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="./imagenesjs/BMW_White_Logo.svg" alt="logoBMW" />
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form method="post">
+              <div>
+                <label for="recipient-name" class="col-form-label fst-italic">Nombre:
+                </label>
+                <input autocomplete="off" class="form-control" type="text" class="form-control" id="name"
+                  placeholder="Ingresa tu Nombre" />
+                <div id="validarNombre"></div>
+              </div>
+              <div>
+                <label for="message-text" class="col-form-label fst-italic">Apellido:</label>
+                <input autocomplete="off"type="text" class="form-control" id="lastName" placeholder="Ingresa tu Apellido" />
+                <div id="validarApellido"></div>
+              </div>
+              <div>
+                <label for="message-text" class="col-form-label fst-italic">Correo Electrónico:</label>
+                <input autocomplete="off" type="email" class="form-control" id="email" placeholder="Ingresa tu email" />
+                <div id="emailIncorrecto"></div>
+              </div>
+              <div>
+                <label for="message-text" class="col-form-label fst-italic">Contraseña:</label>
+                <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" />
+                <div id="contraseñaIncorrecta"></div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer d-flex justify-content-between">
+            <p class="registrateAqui">
+              Ya tenés una cuenta?
+              <button id="btnIniciarSeccion" type="button" class="bg-white btn-link fw-bold fst-italic"
+                data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                Iniciá sección!
+              </button>
+            </p>
+            <button disabled type="submit" class="btn btn-primary" id="suscribirse" onclick="validarContraseña()">
+              Registrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="exampleModal4" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <img src="./imagenesjs/BMW_White_Logo.svg" alt="logoBMW" />
+            <h5 class="modal-title"></h5>
+          </div>
+          <div class="modal-body ayuda">
+            <h5>¿Cual es su función?</h5>
+            <p>
+              Es un sistema de simulación del tablero de auto, su función es
+              mostrar como sería el sistema de un velocímetro y sus avisos
+              como por ejemplo.. La luz que indica el cinturon de seguridad
+              cuando el velocímetro llega a 60km/h o el aviso de una máxima de
+              120km/h en una autopista.
+            </p>
+            <p>
+              Además incluyen botones como el de colocar balizas y de encender
+              el auto, en cuanto no podrá usar el velocímetro si no enciende
+              el auto(lógico).
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="registroExitoso">
+      <div class="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" id="exampleModal3">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <img src="./imagenesjs/BMW_White_Logo.svg" alt="logoBMW" />
+              
+            </div>
+            <div class="modal-body">
+              <p>Felicitaciones !! te registraste exitosamente!!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tablero" style="display: none">
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center">
+          <img src="./imagenesjs/tablerotransparente.png" alt="" class="img-fluid" style="height: 450px; width: auto" />
+          <img src="./imagenesjs/agujavelocimetro.png" alt="Aguja" id="aguja" class="position-absolute img-fluid" />
+          <img src="./imagenesjs/bmw-logo.png" alt="BMW-logo" id="logoBmw" class="position-absolute img-fluid" />
+          <img src="./imagenesjs/limiteVelocidad.png" alt="velocidad maxima 120" id="velocidadMaxima"
+            class="img-fluid position-absolute" />
+          <img src="./imagenesjs/cinturon-de-seguridad.jpg" alt="" id="cinturonDeSeguridad"
+            class="img-fluid position-absolute" />
+          
+          <img src="./imagenesjs/LuzdeGiro2.png" alt="Luz de Giro" id="luzdeGiro1"
+            class="position-absolute img-fluid ocultar" />
+          <img src="./imagenesjs/LuzdeGiro2.png" alt="Luz de Giro" id="luzdeGiro2"
+            class="position-absolute img-fluid ocultar" />
+          <img src="./imagenesjs/lucesBajas.webp" alt="luz baja" id="luzBaja" class="img-fluid position-absolute" />
+          <img src="./imagenesjs/balizas2.png" class="img-fluid position-absolute" id="botonBaliza" alt="balizas" />
+          <img src="./imagenesjs/Aceite.png" class="img-fluid position-absolute" id="aceite" alt="aceite" />
+          <img src="./imagenesjs/frenoDeMano.png" class="img-fluid position-absolute" id="frenoDeMano"
+            alt="freno de mano" />
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="freno" id="freno">
+          <p class="pedalFrenar">|||</p>
+        </div>
+        <div class="acelerador" id="acelerar">
+          <p class="pedalAcelerar">|||</p>
+        </div>
+      </div>
+    </div>
+    <div class="btn-de-inicio position-relative" id="btnDeInicio">
+      <img src="./imagenesjs/BotonEncendido.png" id="botonEncendido" alt="BotonEncendido"
+            class="img-fluid position-absolute top-50 start-50 translate-middle" style="margin-top:200px" onclick="mostrarTablero()"/>
+    </div>
+    
+  </main>
+
+  <script src="./js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>

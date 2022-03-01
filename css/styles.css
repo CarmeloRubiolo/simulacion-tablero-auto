@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Montserrat:wght@300&display=swap');
+
+header button {
+    font-family: 'Jost', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url("/imagenesjs/fondo2.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.detener{
+    position: absolute;
+}
+.ocultar{
+    display: none;
+}
+.animacion {
+    position: absolute;
+
+animation-name: parpadeo;
+animation-duration: 1.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+
+-webkit-animation-name:parpadeo;
+-webkit-animation-duration: 1.5s;
+-webkit-animation-timing-function: linear;
+-webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{  
+0% { opacity: 1.0; }
+50% { opacity: 0.0; }
+100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+0% { opacity: 1.0; }
+50% { opacity: 0.0; }
+100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+0% { opacity: 1.0; }
+50% { opacity: 0.0; }
+100% { opacity: 1.0; }
+}
+header {
+    margin-bottom: 40px;
+}
+
+#aguja {
+    transform: rotate(-47deg);
+    z-index: 999;
+}
+.modal input{
+    width:250px;
+    text-align: center;
+    font-size: 10px;
+}
+.modal input:hover{
+    width: 270px;
+    height: 30px;
+    font-size: 15px;
+    border: 1px black solid;
+    transition:0.5s;
+}
+.modal form{
+    display: flex;
+    flex-direction: column;
+    font-size:12px;
+}
+.modal-body{
+    display: flex;
+    justify-content:center;
+}
+.logo{
+    width:70px;
+    height:70px;
+    position: absolute;
+    margin-left: 20px;
+}
+
+#velocidadMaxima{
+    display: none;
+    z-index: 999;
+}
+
+#cinturonDeSeguridad{
+    display: none;
+    border-radius: 20px;
+    z-index: 999;
+} 
+.acelerador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    height:100px;
+    width: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(0deg, #868a8a 0%, #383734 100% );
+    box-shadow: 0px 7px 10px 0px gray;
+    transition: 0.5s;
+    
+   
+}
+.acelerador:active{
+    transform-origin: bottom;
+    transform: rotateX(30deg);
+    box-shadow: 0px 3px 5px 0px gray;
+}
+.freno{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    height: 70px;
+    width: 40px;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+    background: linear-gradient(0deg, #868a8a 0%, #383734 100% );
+    box-shadow: 0px 7px 10px 0px gray;
+    transition: 0.5s;
+    
+    
+}
+.freno:active{
+    transform-origin: bottom;
+    transform: rotateX(30deg);
+    box-shadow: 0px 3px 5px 0px gray;
+}
+
+.tableroDelAuto #aguja{
+    transform: rotate(-50deg);
+    transition: 2s;
+}
+#botonEncendido{
+    height:210px; 
+    width:auto; 
+    /* margin-left: 300px; 
+    margin-top: 150px; */
+    cursor: pointer;
+}
+#botonEncendido:active{
+    height:200px; 
+    width:auto;   
+}
+#cinturonDeSeguridad{
+    height:25px; 
+    width:auto; 
+    margin-left: 260px; 
+    margin-top:-30px;
+}
+#velocidadMaxima{
+    height:25px; 
+    width:auto; 
+    margin-left: 220px; 
+    margin-top:-30px;
+}
+#logoBmw{
+    height:30px; 
+    width:auto; 
+    margin-top:90px;
+}
+#aguja{
+    height:270px; 
+    width:auto;
+}
+#luzdeGiro1{
+    height:60px; 
+    width:auto; 
+    margin-top:-90px;
+    margin-left: 170px; 
+}
+#luzdeGiro2{
+    height:60px; 
+    width:auto; 
+    margin-top:-90px;
+    margin-left: -165px; 
+    transform: rotate(180deg);
+}
+#luzBaja{
+    height:25px; 
+    width:auto; 
+    margin-left: -50px; 
+    margin-top:-30px;
+    display:none;
+}
+#aceite{
+    height:75px; 
+    width:auto; 
+    margin-left: 50px; 
+    margin-top:-30px;
+    display:none;
+}
+#frenoDeMano{
+    height:60px; 
+    width:auto; 
+    margin-left: 5px; 
+    margin-top:-60px;
+    display:none;
+}
+#botonBaliza{
+    height:130px; 
+    width:auto; 
+    margin-left: -150px; 
+    margin-top: 170px;
+    cursor: pointer;
+}
+#botonBaliza:active{
+    height:115px; 
+    width:auto; 
+
+
+}
+#btnRegistro{
+    border: none;
+    color: rgb(49, 174, 216);
+    background-color: none;
+}
+.registrateAqui{
+    font-size:10px;
+}
+#btnIniciarSeccion{
+    border: none;
+    color: rgb(49, 174, 216);
+    background-color: none;
+}
+.modal-body{
+    background-color: rgb(64, 137, 197);
+}
+.modal-header{
+    background-color: rgb(0, 0, 0);
+    color: rgb(64, 137, 197);
+    border: 30px solid black;
+    display:flex;
+    flex-direction: column;
+}
+/* .modal-content .modal-heade{
+    border: 30px solid black;
+} */
+
+.modal-content .ayuda{
+    display: flex;
+    flex-direction: column;
+}
