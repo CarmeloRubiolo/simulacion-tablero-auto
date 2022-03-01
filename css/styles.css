@@ -5,10 +5,13 @@ header button {
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    background-image: url("/imagenesjs/fondo.jpg");
+#fondo {
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
+    height: 147%;
+    width: auto;
+    z-index: -999;
 }
 .detener{
     position: absolute;
