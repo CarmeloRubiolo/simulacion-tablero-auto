@@ -6,7 +6,7 @@ header button {
 }
 
 body {
-    background-image: url("/imagenesjs/fondo2.webp");
+    background-image: url("/imagenesjs/fondo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
